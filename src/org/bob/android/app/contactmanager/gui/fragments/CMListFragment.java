@@ -19,6 +19,7 @@ import org.bob.android.app.contactmanager.tasks.ATRetrieveContactDetails;
 import org.bob.android.app.contactmanager.tasks.ATRetrieveContactHeaders;
 import org.bob.android.app.contactmanager.utilities.Constants;
 import org.bob.android.app.contactmanager.utilities.Logger;
+import org.bob.android.app.contactmanager.utilities.Utilities;
 
 /**
  * Classe che implementa il fragment contenente la lista dei contatti
@@ -287,6 +288,9 @@ public class CMListFragment extends Fragment
             case R.id.menu_new_contact:
                 AlertDialog dialog = CMDialog.showNewContactDialog(this);
                 dialog.show();
+                return true;
+            case R.id.menu_export_db:
+                Utilities.handleDB();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -70,7 +70,7 @@ public class Utilities
         FileChannel source = null;
         FileChannel destination = null;
         String currentDBPath = "/data/org.bob.android.app.contactmanager/databases/" + DBHelper.DATABASE_NAME;
-        String backupDBPath = DBHelper.DATABASE_NAME + (new Date()).getTime();
+        String backupDBPath = "dev/org.bob.android.app.contactmanager/" + DBHelper.DATABASE_NAME + (new Date()).getTime();
         File currentDB = new File(data, currentDBPath);
         File backupDB = new File(sd, backupDBPath);
         try {

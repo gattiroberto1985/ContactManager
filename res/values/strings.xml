@@ -57,7 +57,7 @@
     <!-- MENU -->
     <string name="MENU_ADD_CONTACT">Add Contact</string>
     <string name="MENU_ADD_OBJECT">Add Reference</string>
-
+    <string name="MENU_EXPORT_DATABASE">Export Database</string>
 
 
 </resources>
