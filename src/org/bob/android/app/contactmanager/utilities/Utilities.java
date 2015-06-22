@@ -4,11 +4,12 @@ import android.os.Environment;
 import android.widget.Toast;
 import org.bob.android.app.contactmanager.ApplicationCM;
 import org.bob.android.app.contactmanager.persistence.DBHelper;
+import org.bob.android.app.contactmanager.persistence.beans.AddressBean;
+import org.bob.android.app.contactmanager.persistence.beans.ContactBean;
+import org.bob.android.app.contactmanager.persistence.beans.EmailBean;
+import org.bob.android.app.contactmanager.persistence.beans.PhoneBean;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.channels.FileChannel;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -69,8 +70,8 @@ public class Utilities
         File data = Environment.getDataDirectory();
         FileChannel source = null;
         FileChannel destination = null;
-        String currentDBPath = "/data/org.bob.android.app.contactmanager/databases/" + DBHelper.DATABASE_NAME;
-        String backupDBPath = "dev/org.bob.android.app.contactmanager/" + DBHelper.DATABASE_NAME + (new Date()).getTime();
+        String currentDBPath = "/data/" + DBConstants.AUTHORITY + "/databases/" + DBHelper.DATABASE_NAME;
+        String backupDBPath = "dev/" + DBConstants.AUTHORITY + "/" + DBHelper.DATABASE_NAME + (new Date()).getTime();
         File currentDB = new File(data, currentDBPath);
         File backupDB = new File(sd, backupDBPath);
         try {
@@ -85,4 +86,38 @@ public class Utilities
             e.printStackTrace();
         }
     }
+
+    public static final void parseInputFile(String file)
+    {
+        File ifile = new File(Environment.getExternalStorageDirectory() + "/dev/" + DBConstants.AUTHORITY + "/inputfile.csv" );
+        String separator = "§";
+        try
+        {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(ifile));
+            do
+            {
+                line = reader.readLine();
+                // I campi sono
+                String[] parts = line.split(separator);
+
+                int birthday = 0;
+
+                String surname = parts[0], name = parts[1], note = parts[2];
+
+                ContactBean cb = new ContactBean(-1, parts[0], parts[1], birthday);
+
+                PhoneBean p1 = new PhoneBean(-1, parts[3]);
+                PhoneBean p2 = new PhoneBean(-1, parts[5]);
+                PhoneBean p3 = new PhoneBean(-1, parts[7]);
+
+                EmailBean e1 = new EmailBean(-1, parts[9]);
+                EmailBean e2 = new EmailBean(-1, parts[11]);
+
+                AddressBean a1 = new AddressBean(-1, parts[13]);
+
+
+            } while (line != null);
+        }
+    }
+
 }
