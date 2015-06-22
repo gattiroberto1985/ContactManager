@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <SearchView
+            android:id="@+id/frg_list_filter_contact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textAutoComplete"
+            android:queryHint="@string/FRG_LIST_QUERY_FILTER_HINT"/>
+
+    <ExpandableListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"
+            android:id="@+id/frg_list_contact_exp_list">
+
+    </ExpandableListView>
+
+</LinearLayout>

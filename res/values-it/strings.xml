@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ContactManager</string>
+    <string name="app_description">Un gestore di contatti per android</string>
+    <string name="detail_activity_name">Dettaglio contatto</string>
+
+    <!-- DEFAULT VALUES -->
+    <string name="DEFAULT_CONTACT_NAME">name</string>
+    <string name="DEFAULT_CONTACT_SURNAME">surname</string>
+    <string name="DEFAULT_OBJECT_VALUE"></string>
+    <string-array name="DEFAULT_TYPE_VALUES">
+        <item>Indirizzo</item>
+        <item>EMail</item>
+        <item>Telefono</item>
+    </string-array>
+
+    <string name="DEFAULT_SMS_CONTENT">Testo</string>
+
+    <!-- ERROR MESSAGES -->
+    <string name="DIALOG_ERROR_EMPTY_FIELD">ERRORE: uno dei campi inseriti non e\' valido</string>
+    <string name="DIALOG_ERROR_UNPARSABLE_DATE">ERRORE: impossibile eseguire il parsing della data inserita</string>
+    <string name="DIALOG_WARNING_NULL_DATE">ATTENZIONE: compleanno non settato, imposto la data di oggi</string>
+
+    <!-- DIALOG MESSAGES -->
+    <string name="LOADING_CONTACTS">Caricamento contatti in corso...</string>
+    <string name="LOADING_CONTACT_DETAILS">Caricamento dettaglio contatto in corso...</string>
+    <string name="DIALOG_TITLE_NEW_CONTACT">Aggiungi contatto</string>
+    <string name="DIALOG_TITLE_NEW_REFERENCE">Aggiungi riferimento</string>
+    <string name="DIALOG_TITLE_REMOVE_REFERENCE">Rimuovi riferimento</string>
+    <string name="DIALOG_TITLE_REMOVE_CONTACT">Rimuovi contatto</string>
+    <string name="DIALOG_DESCR_REMOVE_CONTACT">Attenzione: verranno rimosse anche tutte le relazioni del contatto!</string>
+    <string name="DIALOG_HINT_OBJECT_VALUE">Aggiungi riferimento</string>
+    <string name="DIALOG_HINT_CONTACT_SURNAME">Cognome del contatto</string>
+    <string name="DIALOG_HINT_CONTACT_NAME">Nome del contatto</string>
+    <string name="DIALOG_HINT_CONTACT_BIRTHDAY">Data di nascita del contatto</string>
+
+    <!-- GUI -->
+    <string name="HDR_ADDRESSES_TAB_LABEL">Indirizzi</string>
+    <string name="HDR_PHONES_TAB_LABEL">Telefoni</string>
+    <string name="HDR_EMAILS_TAB_LABEL">Email</string>
+    <string name="FRG_LIST_QUERY_FILTER_HINT">Filtra per "cognome nome"... </string>
+    <!-- MENU -->
+    <string name="MENU_ADD_CONTACT">Aggiungi contatto</string>
+    <string name="MENU_ADD_OBJECT">Aggiungi riferimento</string>
+
+</resources>

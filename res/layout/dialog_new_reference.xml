@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Spinner android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/dlg_new_reference_type"/>
+
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/dlg_new_reference_id"
+              android:text="@string/DEFAULT_OBJECT_ID"
+              android:visibility="invisible"/>
+
+    <AutoCompleteTextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/dlg_new_reference_value"
+              android:hint="@string/DIALOG_HINT_OBJECT_VALUE"/>
+
+
+</LinearLayout>

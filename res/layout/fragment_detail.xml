@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+
+    <!-- Header del contatto -->
+    <include layout="@layout/layout_detail_contact_header" />
+
+    <!-- Lista oggetti contatto -->
+
+    <TabHost
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tab_host"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+            <!-- TabWidget used to creat tabs -->
+            <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+            </TabWidget>
+            <!-- container of tabs -->
+            <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                <!-- tab N°1 -->
+                <!-- Inclusion of the interface -->
+                <include
+                        android:id="@+id/phones_lyt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        layout="@layout/layout_phones_list" >
+                </include>
+                <!-- tab N°2 -->
+                <!-- Inclusion of the interface -->
+                <include
+                        android:id="@+id/emails_lyt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/layout_emails_list" >
+                </include>
+                <!-- tab N°3 -->
+                <!-- Inclusion of the interface -->
+                <include
+                        android:id="@+id/addresses_lyt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/layout_addresses_list" >
+                </include>
+            </FrameLayout>
+        </LinearLayout>
+
+    </TabHost>
+</LinearLayout>

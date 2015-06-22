@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- COMMON VALUES FOR LANGUAGES -->
+    <string name="DEFAULT_OBJECT_ID">0</string>
+    <!-- This must be ordered according to the DEFAULT_TYPE_VALES -->
+    <string-array name="DEFAULT_TYPE_CHARS">
+        <item>A</item>
+        <item>M</item>
+        <item>T</item>
+    </string-array>
+
+
+    <string name="app_name">ContactManager</string>
+    <string name="app_description">A contact manager for android</string>
+    <string name="detail_activity_name">Contact detail</string>
+
+    <!-- DEFAULT VALUES -->
+    <string name="DEFAULT_CONTACT_NAME">name</string>
+    <string name="DEFAULT_CONTACT_SURNAME">surname</string>
+    <string name="DEFAULT_OBJECT_VALUE">object</string>
+
+    <string-array name="DEFAULT_TYPE_VALUES">
+        <item>Address</item>
+        <item>EMail</item>
+        <item>Phone</item>
+    </string-array>
+
+    <string name="DEFAULT_SMS_CONTENT">Text</string>
+
+
+    <!-- CONSTANT VALUES -->
+
+    <!-- ERROR MESSAGES -->
+    <string name="DIALOG_ERROR_EMPTY_FIELD">ERROR: Empty name or surname</string>
+    <string name="DIALOG_ERROR_UNPARSABLE_DATE">ERROR: Date not parsable</string>
+    <string name="DIALOG_WARNING_NULL_DATE">WARNING: date null, setting current day as birthday</string>
+
+    <!-- DIALOG MESSAGES -->
+    <string name="LOADING_CONTACTS">Loading contacts, please wait...</string>
+    <string name="LOADING_CONTACT_DETAILS">Loading contact details, please wait...</string>
+    <string name="DIALOG_TITLE_NEW_CONTACT">Add Contact</string>
+    <string name="DIALOG_TITLE_NEW_REFERENCE">Add Reference</string>
+    <string name="DIALOG_TITLE_REMOVE_REFERENCE">Remove Reference</string>
+    <string name="DIALOG_TITLE_REMOVE_CONTACT">Remove Contact</string>
+    <string name="DIALOG_DESCR_REMOVE_CONTACT">Warning: all the relations of the contact will be removed!</string>
+    <string name="DIALOG_HINT_OBJECT_VALUE">Reference value</string>
+    <string name="DIALOG_HINT_CONTACT_SURNAME">Contact surname</string>
+    <string name="DIALOG_HINT_CONTACT_NAME">Contact name</string>
+    <string name="DIALOG_HINT_CONTACT_BIRTHDAY">Contact birthday</string>
+    <!-- GUI -->
+    <string name="HDR_ADDRESSES_TAB_LABEL">Addresses</string>
+    <string name="HDR_PHONES_TAB_LABEL">Phones</string>
+    <string name="HDR_EMAILS_TAB_LABEL">EMails</string>
+    <string name="FRG_LIST_QUERY_FILTER_HINT">Filter by "surname name"</string>
+
+    <!-- MENU -->
+    <string name="MENU_ADD_CONTACT">Add Contact</string>
+    <string name="MENU_ADD_OBJECT">Add Reference</string>
+
+
+
+</resources>
