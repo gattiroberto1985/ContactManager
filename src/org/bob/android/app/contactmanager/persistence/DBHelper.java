@@ -95,8 +95,8 @@ public class DBHelper extends OrmLiteSqliteOpenHelper
             TableUtils.createTable(connectionSource, RelationBean.class);
             db.execSQL("CREATE VIEW " + DBConstants.CONTACT_DETAILS_VIEW_NAME + " AS " + this.CONTACT_DETAILS_VIEW_SQL);
 
-            Logger.v(this.getClass(), "Inserisco i dati");
-            TestPersistence.createTestContact(this.mContext.getContentResolver());
+            //Logger.v(this.getClass(), "Inserisco i dati");
+            //TestPersistence.createTestContact(this.mContext.getContentResolver());
         }
         catch (SQLException e)
         {

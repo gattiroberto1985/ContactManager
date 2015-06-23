@@ -292,6 +292,9 @@ public class CMListFragment extends Fragment
             case R.id.menu_export_db:
                 Utilities.handleDB();
                 return true;
+            case R.id.menu_parse_file:
+                Utilities.parseInputFile();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
