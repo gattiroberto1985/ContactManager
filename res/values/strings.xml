@@ -40,6 +40,7 @@
     <string name="LOADING_CONTACTS">Loading contacts, please wait...</string>
     <string name="LOADING_CONTACT_DETAILS">Loading contact details, please wait...</string>
     <string name="DIALOG_TITLE_NEW_CONTACT">Add Contact</string>
+    <string name="DIALOG_TITLE_EDIT_CONTACT_HEADER">Edit Contact</string>
     <string name="DIALOG_TITLE_NEW_REFERENCE">Add Reference</string>
     <string name="DIALOG_TITLE_REMOVE_REFERENCE">Remove Reference</string>
     <string name="DIALOG_TITLE_REMOVE_CONTACT">Remove Contact</string>
@@ -58,6 +59,6 @@
     <string name="MENU_ADD_CONTACT">Add Contact</string>
     <string name="MENU_ADD_OBJECT">Add Reference</string>
     <string name="MENU_EXPORT_DATABASE">Export Database</string>
-
+    <string name="MENU_CONTACT_DETAIL_EDIT">Edit Contact</string>
 
 </resources>

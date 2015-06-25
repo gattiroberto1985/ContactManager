@@ -67,4 +67,32 @@ public class BeanFactory
         }
         return obj;
     }
+
+    public static int update(BaseObject object)
+    {
+
+    }
+
+    public static int exists(BaseObject object)
+    {
+        Logger.v(BeanFactory.class.getClass(), "Controllo esistenza oggetto a db");
+        Uri uri = null;
+        String where = "";
+        if ( obj instanceof ContactBean )
+        {
+            uri = DBConstants.CONTACT_CONTENT_URI;
+            where = DBConstants.CONTACT_SURNAME_FIELD_NAME + ", " + DBConstants.CONTACT_NAME_FIELD_NAME;
+        }
+        if ( obj instanceof AddressBean ) { uri = DBConstants.ADDRESS_CONTENT_URI; where = DBConstants.ADDRESS_ADDRESS_FIELD_NAME; }
+        if ( obj instanceof EmailBean   ) { uri = DBConstants.EMAIL_CONTENT_URI;   where = DBConstants.EMAIL_EMAIL_FIELD_NAME;     }
+        if ( obj instanceof PhoneBean   ) { uri = DBConstants.PHONE_CONTENT_URI;   where = DBConstants.PHONE_PHONE_FIELD_NAME;     }
+        assert uri != null;
+        Cursor cursor = ApplicationCM.getInstance().getContentResolver().query(uri, new String[] { DBConstants.DEFAULT_ID_FIELD_NAME }, where, new String[] { obj.getDescription() }, null);
+        if ( cursor == null || cursor.getCount() < 1 )
+        {
+            Logger.i_lfc(BeanFactory.class.getClass(), "Nessun oggetto recuperato! Si puo' procedere!");
+            return -1;
+        }
+        else return Integer.parseInt(uri.getLastPathSegment());
+    }
 }

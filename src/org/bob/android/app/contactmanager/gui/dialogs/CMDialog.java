@@ -10,6 +10,7 @@ import org.bob.android.app.contactmanager.R;
 import org.bob.android.app.contactmanager.gui.adapters.ACTVAdapter;
 import org.bob.android.app.contactmanager.gui.dialogs.interfaces.OnContactAdd;
 import org.bob.android.app.contactmanager.gui.dialogs.interfaces.OnContactDelete;
+import org.bob.android.app.contactmanager.gui.dialogs.interfaces.OnContactEdit;
 import org.bob.android.app.contactmanager.gui.dialogs.interfaces.OnReferenceAdd;
 import org.bob.android.app.contactmanager.gui.dialogs.interfaces.OnReferenceDelete;
 import org.bob.android.app.contactmanager.gui.fragments.CMDetailFragment;
@@ -21,6 +22,7 @@ import org.bob.android.app.contactmanager.tasks.ATRetrieveObjects;
 import org.bob.android.app.contactmanager.utilities.Constants;
 import org.bob.android.app.contactmanager.utilities.DBConstants;
 import org.bob.android.app.contactmanager.utilities.Logger;
+import org.bob.android.app.contactmanager.utilities.Utilities;
 
 /**
  * Created by roberto.gatti on 05/01/2015.
@@ -28,6 +30,30 @@ import org.bob.android.app.contactmanager.utilities.Logger;
 public class CMDialog
 {
 
+    /**
+     * Il metodo mostra un dialog frame per la modifica dei dati di testata
+     * del contatto.
+     *
+     * @lf
+     * @return
+     */
+    public static AlertDialog showEditContactHeaderDialog(CMDetailFragment df)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(df.getActivity());
+        builder.setTitle(df.getResources().getString(R.string.DIALOG_TITLE_EDIT_CONTACT_HEADER));
+        View dialogView = (df.getActivity().getLayoutInflater()).inflate(R.layout.dialog_new_contact, null);
+        EditText name = (EditText) dialogView.findViewById(R.id.dlg_new_contact_name);
+        EditText surname = ((EditText) dialogView.findViewById(R.id.dlg_new_contact_surname) );
+        EditText birthday = ((EditText) dialogView.findViewById(R.id.dlg_new_contact_surname) );
+        name.setText(df.getSelectedContact().getName());
+        surname.setText(df.getSelectedContact().getSurname());
+        birthday.setText(Utilities.DATE_FORMATTER.format(new java.util.Date(df.getSelectedContact().getBirthday()));
+        builder.setView(dialogView);
+        OnContactEdit listener = new OnContactEdit(df, name,surname,birthday);
+        builder.setPositiveButton(android.R.string.ok, listener);
+        builder.setNegativeButton(android.R.string.cancel, listener);
+        return builder.create();
+    }
 
     public static AlertDialog showNewContactDialog(CMListFragment lf)
     {

@@ -283,9 +283,14 @@ public class CMDetailFragment extends Fragment
     {
         Logger.v(this.getClass(), "OnOptionsItemSelected listfragment");
         // Handle item selection
+        AlertDialog dialog;
         switch (item.getItemId()) {
             case R.id.menu_new_reference:
-                AlertDialog dialog = CMDialog.showNewReferenceDialog(this);
+                dialog = CMDialog.showNewReferenceDialog(this);
+                dialog.show();
+                return true;
+            case R.id.menu_contact_detail_edit:
+                dialog = CMDialog.showEditContactHeaderDialog(this);
                 dialog.show();
                 return true;
             default:

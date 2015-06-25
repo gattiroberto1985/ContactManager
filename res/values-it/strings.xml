@@ -25,6 +25,7 @@
     <string name="LOADING_CONTACTS">Caricamento contatti in corso...</string>
     <string name="LOADING_CONTACT_DETAILS">Caricamento dettaglio contatto in corso...</string>
     <string name="DIALOG_TITLE_NEW_CONTACT">Aggiungi contatto</string>
+    <string name="DIALOG_TITLE_EDIT_CONTACT_HEADER">Modifica contatto</string>
     <string name="DIALOG_TITLE_NEW_REFERENCE">Aggiungi riferimento</string>
     <string name="DIALOG_TITLE_REMOVE_REFERENCE">Rimuovi riferimento</string>
     <string name="DIALOG_TITLE_REMOVE_CONTACT">Rimuovi contatto</string>
@@ -42,5 +43,6 @@
     <!-- MENU -->
     <string name="MENU_ADD_CONTACT">Aggiungi contatto</string>
     <string name="MENU_ADD_OBJECT">Aggiungi riferimento</string>
+    <string name="MENU_CONTACT_DETAIL_EDIT">Modifica contatto</string>
 
 </resources>
