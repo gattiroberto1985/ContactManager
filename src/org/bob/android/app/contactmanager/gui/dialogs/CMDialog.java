@@ -44,10 +44,10 @@ public class CMDialog
         View dialogView = (df.getActivity().getLayoutInflater()).inflate(R.layout.dialog_new_contact, null);
         EditText name = (EditText) dialogView.findViewById(R.id.dlg_new_contact_name);
         EditText surname = ((EditText) dialogView.findViewById(R.id.dlg_new_contact_surname) );
-        EditText birthday = ((EditText) dialogView.findViewById(R.id.dlg_new_contact_surname) );
+        EditText birthday = ((EditText) dialogView.findViewById(R.id.dlg_new_contact_birthday) );
         name.setText(df.getSelectedContact().getName());
         surname.setText(df.getSelectedContact().getSurname());
-        birthday.setText(Utilities.DATE_FORMATTER.format(new java.util.Date(df.getSelectedContact().getBirthday()));
+        birthday.setText(Utilities.DATE_FORMATTER.format(new java.util.Date(df.getSelectedContact().getBirthday())));
         builder.setView(dialogView);
         OnContactEdit listener = new OnContactEdit(df, name,surname,birthday);
         builder.setPositiveButton(android.R.string.ok, listener);

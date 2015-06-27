@@ -2,20 +2,16 @@ package org.bob.android.app.contactmanager.gui.dialogs.interfaces;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.widget.EditText;
 import android.widget.Toast;
 import org.bob.android.app.contactmanager.R;
-import org.bob.android.app.contactmanager.gui.activities.MainActivity;
 import org.bob.android.app.contactmanager.gui.fragments.CMDetailFragment;
 import org.bob.android.app.contactmanager.persistence.beans.BeanFactory;
 import org.bob.android.app.contactmanager.persistence.beans.ContactBean;
-import org.bob.android.app.contactmanager.utilities.DBConstants;
 import org.bob.android.app.contactmanager.utilities.Logger;
 import org.bob.android.app.contactmanager.utilities.Utilities;
 
 import java.text.ParseException;
-import java.util.Date;
 
 /**
  * Created by roberto.gatti on 05/01/2015.
@@ -59,7 +55,7 @@ public class OnContactEdit implements DialogInterface.OnClickListener
      */
     private void editContact(AlertDialog dialog)
     {
-        Logger.i_lfc("Tentativo modifica dati di testata del contatto");
+        Logger.i_lfc(OnContactEdit.class, "Tentativo modifica dati di testata del contatto");
         ContactBean oldCnt = df.getSelectedContact();
         ContactBean newCnt = null;
         String name = "", surname = "";
@@ -68,10 +64,10 @@ public class OnContactEdit implements DialogInterface.OnClickListener
         {
             name = et_name.getText().toString();
             surname = et_surname.getText().toString();
-            birthday = Utilities.DATE_FORMATTER.parse(et_birthday.getText().toString());
+            birthday = Utilities.DATE_FORMATTER.parse(et_birthday.getText().toString()).getTime();
             newCnt = new ContactBean(oldCnt.getId(), surname, name, birthday);
             int id = BeanFactory.exists(newCnt);
-            if ( id > 1 )
+            if ( id > 1 && id != oldCnt.getId() )
             {
                 Toast.makeText(this.df.getActivity(), df.getString(R.string.DIALOG_WARNING_CONTACT_EXISTS) + String.valueOf(id), Toast.LENGTH_LONG).show();
             }
@@ -85,11 +81,11 @@ public class OnContactEdit implements DialogInterface.OnClickListener
         {
             if ( et_birthday.getText().toString().length() == 0 )
             {
-                Toast.makeText(this.lf.getActivity(), lf.getString(R.string.DIALOG_WARNING_NULL_DATE), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this.df.getActivity(), df.getString(R.string.DIALOG_WARNING_NULL_DATE), Toast.LENGTH_SHORT).show();
             }
             else
             {
-                Toast.makeText(this.lf.getActivity(), lf.getString(R.string.DIALOG_ERROR_UNPARSABLE_DATE), Toast.LENGTH_LONG).show();
+                Toast.makeText(this.df.getActivity(), df.getString(R.string.DIALOG_ERROR_UNPARSABLE_DATE), Toast.LENGTH_LONG).show();
                 dialog.dismiss();
                 return;
             }

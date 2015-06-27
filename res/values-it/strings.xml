@@ -34,6 +34,7 @@
     <string name="DIALOG_HINT_CONTACT_SURNAME">Cognome del contatto</string>
     <string name="DIALOG_HINT_CONTACT_NAME">Nome del contatto</string>
     <string name="DIALOG_HINT_CONTACT_BIRTHDAY">Data di nascita del contatto</string>
+    <string name="DIALOG_WARNING_CONTACT_EXISTS">Contatto gia\' esistente! Impossibile aggiornare!</string>
 
     <!-- GUI -->
     <string name="HDR_ADDRESSES_TAB_LABEL">Indirizzi</string>

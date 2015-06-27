@@ -49,6 +49,8 @@
     <string name="DIALOG_HINT_CONTACT_SURNAME">Contact surname</string>
     <string name="DIALOG_HINT_CONTACT_NAME">Contact name</string>
     <string name="DIALOG_HINT_CONTACT_BIRTHDAY">Contact birthday</string>
+    <string name="DIALOG_WARNING_CONTACT_EXISTS">Contact exists! Unable to update!</string>
+
     <!-- GUI -->
     <string name="HDR_ADDRESSES_TAB_LABEL">Addresses</string>
     <string name="HDR_PHONES_TAB_LABEL">Phones</string>

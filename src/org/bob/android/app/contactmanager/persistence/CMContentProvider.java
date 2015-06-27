@@ -97,7 +97,12 @@ public class CMContentProvider extends ContentProvider
             QueryBuilder<Object, Integer> qb = red.queryBuilder();
 
             if ( whereClauses != null )
-                qb.where().eq(whereClauses, whereValues[0]);
+            {
+                String[] wc = whereClauses.split("@");
+                if ( wc.length == 2 )
+                    qb.where().eq(wc[0], whereValues[0]).and().eq(wc[1], whereValues[1]);
+                else qb.where().eq(wc[0], whereValues[0]);
+            }
 
             if ( sortOrder != null )
                 qb.orderBy(sortOrder, true);
