@@ -89,6 +89,7 @@ public class DBConstants
     public static final String RELATION_CONTACT_ID_FIELD_NAME = "contact_id";
     public static final String RELATION_OBJECT_ID_FIELD_NAME = "object_id";
     public static final String RELATION_OBJECT_TYPE_FIELD_NAME = "object_type";
+    public static final String RELATION_OBJECT_TAG_FIELD_NAME  = "object_tag";
 
     public static final String CONTACT_DETAILS_R_ID_FIELD_NAME = "R_ID";
     public static final String CONTACT_DETAILS_C_ID_FIELD_NAME = "C_ID";

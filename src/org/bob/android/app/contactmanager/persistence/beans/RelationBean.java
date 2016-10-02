@@ -31,6 +31,9 @@ public class RelationBean extends BaseObject
     @DatabaseField(index = true, columnName = DBConstants.RELATION_OBJECT_TYPE_FIELD_NAME)
     private char object_type;
 
+    @DatabaseField(index = true, columnName = DBConstants.RELATION_OBJECT_TAG_FIELD_NAME)
+    private String object_tag;
+
     private BaseObject object;
 
     static

@@ -15,6 +15,7 @@
               android:id="@+id/dlg_new_contact_surname"
               android:hint="@string/DIALOG_HINT_CONTACT_SURNAME"/>
 
+    <!-- TODO: insert a button to toggle the following panel -->
     <EditText android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:inputType="date"

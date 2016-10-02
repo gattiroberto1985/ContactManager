@@ -88,6 +88,12 @@ public class Utilities
         }
     }
 
+    public static final void importDatas()
+    {
+        File sd = Environment.getExternalStorageDirectory();
+
+    }
+
     public static final void parseInputFile()
     {
         File ifile = new File(Environment.getExternalStorageDirectory() + "/dev/" + DBConstants.AUTHORITY + "/rubrica.csv" );
